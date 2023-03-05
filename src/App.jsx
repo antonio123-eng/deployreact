@@ -22,7 +22,8 @@ function App() {
       {dados && dados.map((dado) => (
        <div>
           <h1>{dado.title}</h1>
-          <p>{dado.budget}</p>
+          <p>R$ {dado.budget}</p>
+          <p>{dado.description}</p>
        </div>
       ))}
     </div>
