@@ -18,7 +18,7 @@ const CreateParty = () => {
 
     const party = {
       ...formulario,
-      image: image
+      image: image.name
     }
     console.log(party)
 
@@ -37,7 +37,7 @@ const CreateParty = () => {
 
   return (
     <div>
-      <form encType='multipart/form-data' onSubmit={handleSubmit} style={{display: "flex", flexDirection: "column"}}>
+      <form encType="multipart/form-data" onSubmit={handleSubmit} style={{display: "flex", flexDirection: "column"}}>
         <label>
           <span>Titulo</span>
           <input type="text" value={formulario.title} name="title" onChange={handleChange}/>

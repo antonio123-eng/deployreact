@@ -14,9 +14,6 @@ export const useCreateParty = () => {
          console.log(partyFormData)
          const response = await fetch("https://nadastestert.onrender.com/api/parties", {
             method: "POST",
-            headers: {
-               "Content-Type": "application/json"
-            },
             body: partyFormData
          })
          console.log(response)
