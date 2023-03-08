@@ -32,7 +32,7 @@ const CreateParty = () => {
 
   return (
     <div>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} style={{display: "flex", flexDirection: "column"}}>
         <label>
           <span>Titulo</span>
           <input type="text" value={formulario.title} name="title" onChange={handleChange}/>
