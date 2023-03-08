@@ -52,7 +52,7 @@ const CreateParty = () => {
         </label>
         <label>
           <span>Imagem</span>
-          <input type="file" value={image} onChange={(e) => setImage(e.target.files[0])}/>
+          <input type="file" onChange={(e) => setImage(e.target.files[0])}/>
         </label>
         <button>Cadastrar</button>
       </form>
