@@ -7,7 +7,7 @@ const CreateParty = () => {
     title: "",
     author: "",
     description: "",
-    budget: ""
+    budget: 0
   })
   const [image, setImage] = useState("")
 
@@ -52,7 +52,7 @@ const CreateParty = () => {
         </label>
         <label>
           <span>Orçamento</span>
-          <input type="text" value={formulario.budget} name="budget" onChange={handleChange}/>
+          <input type="number" value={formulario.budget} name="budget" onChange={handleChange}/>
         </label>
         <label>
           <span>Imagem</span>

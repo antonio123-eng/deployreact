@@ -12,6 +12,7 @@ export const useCreateParty = () => {
          formData.append("description", data.description)
          formData.append("budget", data.budget)
          formData.append("image", data.image)
+         console.log(formData)
          const response = await fetch("https://nadastestert.onrender.com/api/parties", {
             method: "POST",
             body: formData
