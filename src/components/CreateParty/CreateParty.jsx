@@ -31,6 +31,11 @@ const CreateParty = () => {
     setFormulario({...formulario, [e.target.name]: e.target.value})
   }
 
+  const changeImage = (e) => {
+    const imagem = e.target.files[0]
+    setImage(imagem)
+  }
+
   return (
     <div>
       <form encType='multipart/form-data' onSubmit={handleSubmit} style={{display: "flex", flexDirection: "column"}}>
@@ -52,7 +57,7 @@ const CreateParty = () => {
         </label>
         <label>
           <span>Imagem</span>
-          <input type="file" onChange={(e) => setImage(e.target.files[0])}/>
+          <input type="file" onChange={changeImage}/>
         </label>
         <button>Cadastrar</button>
       </form>
