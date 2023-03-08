@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react"
+import CreateParty from "./components/CreateParty/CreateParty"
 
 function App() {
 
@@ -26,6 +27,7 @@ function App() {
           <p>{dado.description}</p>
        </div>
       ))}
+      <CreateParty />
     </div>
   )
 }
