@@ -15,6 +15,15 @@ const CreateParty = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault()
+
+    const party = {
+      ...formulario,
+      image
+    }
+    console.log(party)
+
+    createParty(party)
+    
   }
 
   const handleChange = (e) => {
@@ -30,15 +39,19 @@ const CreateParty = () => {
         </label>
         <label>
           <span>Autor</span>
-          <input type="text" value={formulario.author} name="author"onChange={handleChange}/>
+          <input type="text" value={formulario.author} name="author" onChange={handleChange}/>
         </label>
         <label>
           <span>Descrição</span>
-        <input type="text" value={formulario.description} name="description"onChange={handleChange}/>
+        <input type="text" value={formulario.description} name="description" onChange={handleChange}/>
         </label>
         <label>
           <span>Orçamento</span>
-          <input type="text" value={formulario.budget} name="budget"onChange={handleChange}/>
+          <input type="text" value={formulario.budget} name="budget" onChange={handleChange}/>
+        </label>
+        <label>
+          <span>Imagem</span>
+          <input type="file" value={image} onChange={(e) => setImage(e.target.files[0])}/>
         </label>
         <button>Cadastrar</button>
       </form>
