@@ -5,7 +5,7 @@ function App() {
   const [dados, setDados] = useState()
 
   const fetchData = async() => {
-    const response = await fetch("https://nadastestert.onrender.com/api/parties")
+    const response = await fetch("https://nadastestert.onrender.com/api/parties", {mode:'cors'})
     console.log(response)
     const data = await response.json()
     console.log(data)
