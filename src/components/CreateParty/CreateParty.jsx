@@ -18,7 +18,7 @@ const CreateParty = () => {
 
     const party = {
       ...formulario,
-      image: image.name
+      image
     }
     console.log(party)
 
