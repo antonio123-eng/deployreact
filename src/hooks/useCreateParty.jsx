@@ -17,6 +17,7 @@ export const useCreateParty = () => {
             },
             body: JSON.stringify(partyFormData)
          })
+         console.log(response)
       } catch (error) {
          console.log(error)
       }

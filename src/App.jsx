@@ -20,6 +20,7 @@ function App() {
   return (
     <div className="App">
       <h2>Tudo OK!</h2>
+      <CreateParty />
       {dados && dados.map((dado) => (
        <div>
           <h1>{dado.title}</h1>
@@ -27,7 +28,6 @@ function App() {
           <p>{dado.description}</p>
        </div>
       ))}
-      <CreateParty />
     </div>
   )
 }
