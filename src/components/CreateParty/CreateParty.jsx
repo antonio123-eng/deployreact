@@ -13,13 +13,12 @@ const CreateParty = () => {
 
   const { createParty } = useCreateParty()
 
-  console.log(formulario)
   const handleSubmit = (e) => {
     e.preventDefault()
 
     const party = {
       ...formulario,
-      image
+      image: image
     }
     console.log(party)
 
