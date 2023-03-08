@@ -8,6 +8,8 @@ export const useCreateParty = () => {
    const createParty = async (data) => {
       try {
          const partyFormData = Object.keys(data).forEach((key) => {
+            console.log("Chave: " + key)
+            console.log("valor: " + data[key])
             formData.append(key, data[key])
          })
          console.log(data)
