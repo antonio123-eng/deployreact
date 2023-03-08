@@ -7,16 +7,14 @@ export const useCreateParty = () => {
 
    const createParty = async (data) => {
       try {
-         const partyFormData = Object.keys(data).forEach((key) => {
-            console.log("Chave: " + key)
-            console.log("valor: " + data[key])
-            formData.append(key, data[key])
-         })
-         console.log(data)
-         console.log(partyFormData)
+         formData.append("title", data.title)
+         formData.append("author", data.author)
+         formData.append("description", data.description)
+         formData.append("budget", data.budget)
+         formData.append("image", data.image)
          const response = await fetch("https://nadastestert.onrender.com/api/parties", {
             method: "POST",
-            body: partyFormData
+            body: formData
          })
          console.log(response)
       } catch (error) {
