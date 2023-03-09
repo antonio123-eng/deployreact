@@ -1,33 +1,21 @@
-import { useEffect, useState } from "react"
+import { BrowserRouter, Route, Routes } from "react-router-dom"
 import CreateParty from "./components/CreateParty/CreateParty"
+import Parties from "./components/Parties/Parties"
+import { useParties } from "./hooks/useParties"
 
 function App() {
 
-  const [dados, setDados] = useState()
-
-  const fetchData = async() => {
-    const response = await fetch("https://nadastestert.onrender.com/api/parties")
-    console.log(response)
-    const data = await response.json()
-    console.log(data)
-    setDados(data)
-  }
-
-  useEffect(() => {
-    fetchData()
-  }, [])
+  const { dados } = useParties()
 
   return (
     <div className="App">
-      <h2>Tudo OK!</h2>
       <CreateParty />
-      {dados && dados.map((dado) => (
-       <div>
-          <h1>{dado.title}</h1>
-          <p>R$ {dado.budget}</p>
-          <p>{dado.description}</p>
-       </div>
-      ))}
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Parties />} />
+          <Route path="/add" element={<CreateParty />} />
+        </Routes>
+      </BrowserRouter>
     </div>
   )
 }
