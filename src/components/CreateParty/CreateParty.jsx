@@ -3,13 +3,17 @@ import { useCreateParty } from '../../hooks/useCreateParty'
 
 const CreateParty = () => {
 
+  // const [title, setTitle] = useState("")
+  // const [author, setAuthor] = useState("")
+  // const [description, setDescription] = useState("")
+  // const [budget, setBudget] = useState(0)
+  const [image, setImage] = useState("")
   const [formulario, setFormulario] = useState({
     title: "",
     author: "",
     description: "",
-    budget: 0
+    budget: "",
   })
-  const [image, setImage] = useState("")
 
   const { createParty } = useCreateParty()
 
@@ -18,11 +22,16 @@ const CreateParty = () => {
 
     const party = {
       ...formulario,
-      image
+      image: image
     }
-    console.log(party)
 
-    createParty(party)
+    const formData = new FormData()
+    const partyFormData = Object.keys(party).forEach((key) => {
+      formData.append(key, party[key])
+    })
+    formData.append("party", partyFormData)
+
+    createParty(formData)
     
   }
 
@@ -37,7 +46,7 @@ const CreateParty = () => {
 
   return (
     <div>
-      <form encType="multipart/form-data" onSubmit={handleSubmit} style={{display: "flex", flexDirection: "column"}}>
+      <form onSubmit={handleSubmit} style={{display: "flex", flexDirection: "column"}}>
         <label>
           <span>Titulo</span>
           <input type="text" value={formulario.title} name="title" onChange={handleChange}/>
