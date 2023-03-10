@@ -6,14 +6,12 @@ const Parties = () => {
 
 
   const { dados } = useParties()
-  const url = "https://nadastestert.onrender.com/files/parties/"
 
   return (
     <div className={styles.partiesContainerBg}>
       {dados && dados.map((dado) => (
         <div className={styles.partiesContainer}>
-          <img className={styles.fotos} src={url+dado.image} alt="" />
-          {console.log(url+dado.image)}
+          <img className={styles.fotos} src={`https://nadastestert.onrender.com/files/parties/${dado.image}`} alt="" />
           <h1>{dado.title}</h1>
           <Link to={`party/${dado._id}`}>Detalhes</Link>
         </div>
