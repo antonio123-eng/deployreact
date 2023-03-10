@@ -1,11 +1,8 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom"
 import CreateParty from "./components/CreateParty/CreateParty"
 import Parties from "./components/Parties/Parties"
-import { useParties } from "./hooks/useParties"
 
 function App() {
-
-  const { dados } = useParties()
 
   return (
     <div className="App">
@@ -14,6 +11,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Parties />} />
           <Route path="/add" element={<CreateParty />} />
+          <Route path="/party/:id" element={<CreateParty />} />
         </Routes>
       </BrowserRouter>
     </div>
