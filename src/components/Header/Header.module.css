@@ -1,0 +1,14 @@
+.navegacao {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   padding: 32px;
+}
+
+.add {
+   background-color: rgb(146, 18, 231);
+   padding: 8px 16px;
+   border-radius: 8px;
+   color: #fff;
+   font-size: 1.1em;
+}

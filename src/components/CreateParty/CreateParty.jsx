@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { useCreateParty } from '../../hooks/useCreateParty'
+import styles from "./CreateParty.module.css"
 
 const CreateParty = () => {
 
@@ -45,8 +46,9 @@ const CreateParty = () => {
   }
 
   return (
-    <div>
-      <form onSubmit={handleSubmit} style={{display: "flex", flexDirection: "column"}}>
+    <div className={styles.container}>
+      <h1>Criar Festa</h1>
+      <form onSubmit={handleSubmit} className={styles.form}>
         <label>
           <span>Titulo</span>
           <input type="text" value={formulario.title} name="title" onChange={handleChange}/>

@@ -13,6 +13,7 @@ const Parties = () => {
       {dados && dados.map((dado) => (
         <div className={styles.partiesContainer}>
           <img className={styles.fotos} src={url+dado.image} alt="" />
+          {console.log(url+dado.image)}
           <h1>{dado.title}</h1>
           <Link to={`party/${dado._id}`}>Detalhes</Link>
         </div>
