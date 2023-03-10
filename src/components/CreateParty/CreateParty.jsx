@@ -48,7 +48,7 @@ const CreateParty = () => {
   return (
     <div className={styles.container}>
       <h1>Criar Festa</h1>
-      <form onSubmit={handleSubmit} encType ="multipart/form-data" className={styles.form}>
+      <form onSubmit={handleSubmit} encType="multipart/form-data" className={styles.form}>
         <label>
           <span>Titulo</span>
           <input type="text" value={formulario.title} name="title" onChange={handleChange}/>
