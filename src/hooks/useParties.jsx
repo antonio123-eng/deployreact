@@ -11,12 +11,9 @@ export const useParties = () => {
       setDados(data)
    }
 
-   useEffect(() => {
-      fetchData()
-   }, [])
-
    return {
-      dados
+      dados,
+      fetchData
    }
 
 }
