@@ -42,6 +42,7 @@ const CreateParty = () => {
 
   const changeImage = (e) => {
     const imagem = e.target.files[0]
+    
     setImage(imagem)
   }
 
@@ -67,7 +68,7 @@ const CreateParty = () => {
         </label>
         <label>
           <span>Imagem</span>
-          <input type="file" onChange={changeImage} accept="image/*"/>
+          <input type="file" onChange={changeImage}/>
         </label>
         <button>Cadastrar</button>
       </form>
