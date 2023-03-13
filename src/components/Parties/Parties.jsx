@@ -12,11 +12,16 @@ const Parties = () => {
     fetchData()
   }, [])
 
+  const cu = new FileReader()
+  const t = (valor) => {
+    cu.readAsDataURL(valor)
+  }
+
   return (
     <div className={styles.partiesContainerBg}>
       {dados && dados.map((dado) => (
         <div key={dado._id} className={styles.partiesContainer}>
-          <img className={styles.fotos} src={`https://nadasteste.onrender.com/files/parties/${dado.image}`} alt="" />
+          <img className={styles.fotos} src={`${dado.image}`} alt="" />
           <h1>{dado.title}</h1>
           {console.log(dado.image)}
           <Link to={`party/${dado._id}`}>Detalhes</Link>

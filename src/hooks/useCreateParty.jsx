@@ -5,6 +5,9 @@ export const useCreateParty = () => {
       try {
          const response = await fetch("https://nadastestert.onrender.com/api/parties", {
             method: "POST",
+            headers: {
+               "Conten-Type": "multipart/form-data"
+            },
             body: formData
          })
          console.log(response)
